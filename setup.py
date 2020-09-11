@@ -1,21 +1,18 @@
 """
-geojson-extension setup
+jupyterlab_geojson setup
 """
 import os
 
 from jupyter_packaging import (
     create_cmdclass, install_npm, ensure_targets,
-    combine_commands, ensure_python, get_version,
+    combine_commands, get_version,
 )
 import setuptools
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 # The name of the project
-name="geojson-extension"
-
-# Ensure a valid python version
-ensure_python(">=3.6")
+name="jupyterlab_geojson"
 
 # Get our version
 version = get_version(os.path.join(name, "_version.py"))
@@ -34,7 +31,7 @@ package_data_spec = {
     ]
 }
 
-labext_name = "geojson-extension"
+labext_name = "@jupyterlab/geojson-extension"
 
 data_files_spec = [
     ("share/jupyter/labextensions/%s" % labext_name, lab_path, "*.*"),
@@ -56,18 +53,19 @@ with open("README.md", "r") as fh:
 setup_args = dict(
     name=name,
     version=version,
-    url="https://github.com/jupyterlab/geojson-extension.n",
-    author="",
+    url="https://github.com/jupyterlab/geojson-extension",
+    author="Project Jupyter",
     description="A JupyterLab extension for rendering GeoJSON",
     long_description= long_description,
     long_description_content_type="text/markdown",
     cmdclass= cmdclass,
     packages=setuptools.find_packages(),
     install_requires=[
-        "jupyterlab~=3.0.0b1",
+        "jupyterlab~=3.0.0b4",
     ],
     zip_safe=False,
     include_package_data=True,
+    python_requires=">=3.6",
     license="BSD-3-Clause",
     platforms="Linux, Mac OS X, Windows",
     keywords=["Jupyter", "JupyterLab"],

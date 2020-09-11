@@ -1,0 +1,12 @@
+{
+  "cookiecutter": {
+    "author_name": "Project Jupyter",
+    "python_name": "jupyterlab_geojson",
+    "labextension_name": "@jupyterlab/geojson-extension",
+    "project_short_description": "A JupyterLab extension for rendering GeoJSON",
+    "has_server_extension": "n",
+    "has_binder": "n",
+    "repository": "https://github.com/jupyterlab/geojson-extension",
+    "_template": "https://github.com/jupyterlab/extension-cookiecutter-ts"
+  }
+}
